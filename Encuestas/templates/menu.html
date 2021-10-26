@@ -110,9 +110,14 @@
                 </li>
             </ul>
             
-            <form method="POST"> {% csrf_token %}
+            <!-- <form method="POST"> {% csrf_token %}
                 <input {% if guardar == False %} disabled {% endif %} type="submit" value="Guardar">
-            </form>
+            </form> -->
+
+
+            <form method="POST"> {% csrf_token %}
+                <input disabled type="submit" value="Guardar">
+            </form>        
         </div>
     </div>
     

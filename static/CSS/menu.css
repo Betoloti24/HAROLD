@@ -1,3 +1,6 @@
+*{
+    font-size: 10px;    
+}
 /* Cuerpo principal del menu */
 .cuerpo{
     width: 90%;
@@ -121,6 +124,11 @@
     background-color: rgb(12, 133, 34);
     border: solid 1px rgb(12, 133, 34);
     cursor: pointer;
+}
+.inferior form input[type]:disabled{
+    background-color: rgba(12, 133, 34, 0.4);
+    border: 0;
+    cursor: initial;
 }
 
 .ident{
