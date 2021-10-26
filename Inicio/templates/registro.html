@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block statico %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/inicio.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/registro.css' %}?{% now 'U' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="presentacion">
+            <img class="UAIR" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+            <img class="BOD" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}" alt="">
+            <h1 class="titulo">Autoevaluación</h1>
+        </div>
+        <div class="bienvenida">
+            <h1 class="registro">Registro</h1>
+            <form method="POST"> {% csrf_token %}
+                <input class="solicitudes" placeholder="Ingrese su Nombre" type="text" name="nombre" autocomplete="off" required maxlength="30"><br>
+                <input class="solicitudes" placeholder="Ingrese su Apellido" type="text" name="apellido" autocomplete="off" required maxlength="30"><br>
+                <input class="solicitudes" placeholder="Ingrese su Usuario BOD" type="text" name="usuario" autocomplete="off" required maxlength="50"><br>
+                <input type="submit" class="btn btn-success entrar" value="Entrar">
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/bootstrap.min.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/base.css' %}?{% now 'U' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'IMG/Icono.ico' %}?{% now 'U' %}">
+    {% block statico %}
+
+    {% endblock %}
+    {% block titulo %}
+
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    
+    {% endblock %}
+    
+</body>
+</html>

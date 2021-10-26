@@ -1,0 +1,317 @@
+/* Estilos generales */
+* {
+    font-family: 'Trebuchet MS' !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Cuerpo principal */
+main {
+    width: 70%;
+    display: relative;
+}
+
+/* Texto de bienvenida */
+.entrada{
+    font-size: 40px;
+    margin-left: 150px;
+    margin-top: 140px;
+}
+
+/* Input para inggresar la cedula */
+.cedula{
+    
+    font-size: 25px !important;
+
+    width: 400px !important;
+    height: 30px !important;
+    
+    margin-left: 50px !important;
+    margin-top: 15px !important;
+    padding: 25px 15px !important;
+
+    z-index: 50;
+
+    border-radius: 12px !important;
+}
+.cedula:hover:focus{
+    border-radius: 12px !important;
+}
+
+/* Boton de entrar */
+.entrar{
+    font-family: 'Trebuchet MS' !important;
+    font-size: 25px !important;
+
+    width: 120px !important;
+    height: 55px !important;
+    
+    margin-top: 35px;
+    margin-left: 328px;
+    
+    border-radius: 15px !important;
+    z-index: 50;
+}
+
+/* Mensaje de error */
+.menerror{
+    color: rgb(136, 0, 0);
+}
+
+.cuerpom{
+    background-color: white;
+    text-align: center;
+}
+
+.aceptar{
+    margin-top: 15px;
+}
+
+.si, .no{
+    margin-top: 20px;
+    width: 45px;
+    height: 35px;
+    position: absolute;
+}
+
+.no{
+    background-color: #7F7F7F;
+    border: #7F7F7F;
+}
+
+.si{
+    margin-left: -50px;
+}
+
+/* Aviso */
+.aviso{
+    color: #0DB02B;
+
+    font-size: 30px;
+}
+
+/* Cuerpo del aviso */
+.smscuerpo{
+    text-align: center;
+}
+
+
+/* Logo UAIR del mensaje */
+.UAIRm{
+    width: 90px;
+    height: 60px;
+
+    float: right;
+
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+/* Logo del BOD del mensaje */
+.BODm{
+    width: 90px;
+    height: 60px;
+
+    float: left;
+
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+
+
+
+
+@media screen and (max-width: 1260px) {
+    /* Texto de bienvenida */
+    .entrada{   
+        text-align: center;
+        font-size: 450%;
+        margin-top: 15%;
+        margin-left: 0%;
+    }
+
+    /* Input para inggresar la cedula */
+    .cedula{
+        font-size: 350% !important;
+
+        width: 65% !important;
+        height: -8% !important;
+        
+        margin-left: 0% !important;
+        margin-top: 3% !important;
+        padding: 6% 4% !important;
+
+        border-radius: 12px !important;
+    }
+
+    /* Boton de entrar */
+    .entrar{
+        font-size: 350% !important;
+
+        width: 25% !important;
+        height: 10% !important;
+
+        max-width: 300px;
+        
+        margin-top: 7%;
+        margin-left: 40%;
+        margin-bottom: 20%;
+        
+        border-radius: 15px !important;
+    }
+
+    /* Error de validacion */
+    .error{
+        font-size: 200%;
+        text-align: center;
+
+        margin-top: -38%;
+        margin-bottom: 33.25%;
+        margin-left: 0px;
+
+        color: red;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    /* Texto de bienvenida */
+    .entrada{   
+        font-size: 400%;
+    }
+
+    /* Input para inggresar la cedula */
+    .cedula{
+        font-size: 250% !important;
+    }
+
+    /* Boton de entrar */
+    .entrar{
+        font-size: 250% !important;
+    }
+
+    /* Error de validacion */
+    .error{
+        margin-top: -36%;
+        margin-bottom: 31.25%;
+        font-size: 200%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    /* Texto de bienvenida */
+    .entrada{   
+        font-size: 300%;
+    }
+
+    /* Input para inggresar la cedula */
+    .cedula{
+        font-size: 200% !important;
+    }
+
+    /* Boton de entrar */
+    .entrar{
+        font-size: 200% !important;
+    }
+
+    /* Error de validacion */
+    .error{
+        font-size: 150%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    /* Texto de bienvenida */
+    .entrada{   
+        font-size: 250%;
+    }
+
+    /* Input para inggresar la cedula */
+    .cedula{
+        font-size: 150% !important;
+    }
+
+    /* Boton de entrar */
+    .entrar{
+        font-size: 150% !important;
+    }
+
+    /* Error de validacion */
+    .error{
+        font-size: 120%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    /* Error de validacion */
+    .error{
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    /* Texto de bienvenida */
+    .entrada{   
+        font-size: 180%;
+    }
+
+    /* Input para inggresar la cedula */
+    .cedula{
+        font-size: 120% !important;
+    }
+
+    /* Boton de entrar */
+    .entrar{
+        font-size: 100% !important;
+    }
+
+    /* Error de validacion */
+    .error{
+        font-size: 70%;
+    }
+
+    /* Logo UAIR del mensaje */
+    .UAIRm{
+        width: 70px;
+        height: 50px;
+    }
+
+    /* Logo del BOD del mensaje */
+    .BODm{
+        width: 70px;
+        height: 50px;
+    }
+
+    .si, .no{
+        margin-top: 10px;
+    }
+
+    .aviso{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    /* Texto de bienvenida */
+    .entrada{
+        font-size: 140%;
+    }
+
+    
+
+    /* Input para inggresar la cedula */
+    .cedula{
+        font-size: 100% !important;
+    }
+
+    /* Boton de entrar */
+    .entrar{
+        font-size: 84% !important;
+    }
+
+    /* Error de validacion */
+    .error{
+        font-size: 70%;
+    }
+}

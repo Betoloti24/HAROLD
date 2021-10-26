@@ -1,0 +1,752 @@
+/* Contenedor de todos los objetos */
+.contenedor{
+    color: black;
+
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+
+    width: 1350px;
+    height: auto;
+}
+
+/* Parte superior del contenedor */
+.superior{
+    background-color: white;
+
+    text-align: center;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    border-radius: 50px 50px 0px 0px;
+}
+
+/* Titulo de la encuesta */
+.titulo{
+    font-size: 50px !important;
+
+    margin-top: 10px;
+}
+
+
+
+/* Logo UAIR */
+.UAIR{
+    width: 130px;
+    height: 90px;
+
+    float: right;
+
+    margin-right: 130px;
+    margin-top: -10px;
+}
+
+/* Logo del BOD */
+.BOD{
+    width: 130px;
+    height: 90px;
+
+    float: left;
+
+    margin-left: 130px;
+    margin-top: -10px;
+}
+
+/* Boton de informacion */
+.informacion{
+    font-size: 20px;
+
+    padding: 0px 10px 0px 10px;
+
+    float: left;
+
+    margin-top: -13px;
+    margin-left: 1319.1px;
+    border-radius: 0px !important;
+}
+
+/* Parte inferior del contenedor */
+.inferior{
+    background-color: rgba(220, 220, 220, 0.8);
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0px 0px 50px 50px;
+
+    padding: 30px 77px;
+}
+
+/* Descripcion del riesgo */
+.descripcion{
+    color: black;
+    font-size: 28px;
+
+    text-align: justify;
+}
+
+/* Lista de preguntas */
+.tablapreguntas{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cateforia */
+.categoria{
+    background-color: #5c5656;
+    color: white;
+    width: 1200px;
+
+    font-size: 28px;
+    text-align: center;
+
+    padding: 10px 20px;
+    border-radius: 20px 20px 0px 0px;
+    border: black solid 2px;
+    margin-top: 25px;
+    margin-bottom: -1px;
+}
+
+/* Pregunta */
+.pregunta{
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px 25px;
+    text-align: justify;
+}
+
+/* Aceptacion */
+.aceptacion{
+    background-color: #0DB02B;
+    color: white;
+    border: 2px solid black;
+
+    width: 15%;
+
+    text-align: center;
+}
+
+/* Aceptacion */
+.seleccion{
+    background-color: white;
+    border: 2px solid black;
+
+    width: 15%;
+
+    text-align: center;
+}
+
+/* Observaciones */
+.observaciones{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: solid black 2px;
+}
+
+.obs{
+    background-color: #0DB02B;
+    color: white;
+    font-size: 28px;
+    padding: 20px;
+}
+
+.detalles{
+    border: solid black 2px;
+}
+
+/* Lista de paginas */
+.paginas{
+    margin-top: 30px;
+    margin-left: 400px;
+}
+
+/* Logo BOD del modal */
+.BODm{
+    width: 100px;
+    height: 70px;
+
+    float: left;
+    margin-left: 70px;
+}
+
+/* Logo UAIR del modal */
+.UAIRm{
+    width: 100px;
+    height: 70px;
+
+    float: right;
+    margin-right: 70px;
+}
+
+/* Titulo del modal */
+.titulom{
+    font-size: 45px !important;
+    text-align: center !important;
+
+    margin-top: 0px;
+}
+
+/* Primera parte del modal */
+.parte1{
+    width: 50%;
+    text-align: justify;
+    float: left;
+    padding: 10px ;
+}
+
+/* Segunda parte del modal */
+.parte2{
+    vertical-align: top;
+    text-align: justify;
+    float: right;
+    padding: 10px;
+    width: 50%;
+}
+
+/* Boton para guardar la informacion */
+.guardar{
+    font-size: 20px !important;
+    border: #0DB02B !important;
+    background-color: #0DB02B !important;
+    
+    padding:10px 20px;
+    margin-left: 1083px;
+}
+.guardar:hover{
+    border: #097e1e !important;
+    background-color: #097e1e !important;
+}
+
+/* Mensaje de error */
+.menerror{
+    color: rgb(136, 0, 0);
+}
+
+.cuerpom{
+    text-align: center;
+}
+
+.aceptar{
+    margin-top: 15px;
+}
+
+
+/* Estilos genericos */
+select{
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+}
+select:hover{
+    border-color: #a5a5a5 !important;
+}
+textarea{
+    resize: none;
+    width: 967px;
+    height: 80px;
+    margin-bottom: -7px;
+}
+textarea:hover{
+    border-color: #a5a5a5 !important;
+}
+b{
+    color: #0DB02B;
+}
+
+@media screen and (min-width: 1261px){
+    .formamodal{
+        width: 800px !important;
+        margin-left: -160px;
+    
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+
+    /* Contenedor de todos los objetos */
+    .contenedor{
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        width: 350px;
+    }
+
+    /* Parte superior del contenedor */
+    .superior{
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        border-radius: 50px 50px 0px 0px;
+    }
+
+    /* Titulo de la encuesta */
+    .titulo{
+        font-size: 20px !important;
+
+        margin-top: 10px;
+    }
+    .tit{
+        margin: 0px 80px;
+    }
+
+    /* Logo UAIR */
+    .UAIR{
+        width: 60px;
+        height: 40px;
+
+        margin-right: 15px;
+        margin-top: -2px;
+    }
+
+    /* Logo del BOD */
+    .BOD{
+        width: 60px;
+        height: 40px;
+
+        margin-left: 15px;
+        margin-top: -2px;
+    }
+
+    /* Boton de informacion */
+    .informacion{
+        font-size: 13px;
+
+        padding: 0px 6px 0px 6px;
+
+        margin-top: -1px;
+        margin-left: 330px;
+        border-radius: 0px !important;
+    }
+
+    /* Parte inferior del contenedor */
+    .inferior{
+        width: 100%;
+        height: 100%;
+
+        padding: 15px;
+    }
+
+    /* Descripcion del riesgo */
+    .descripcion{
+        font-size: 15px;
+    }
+
+    /* Lista de preguntas */
+    .tablapreguntas{
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Cateforia */
+    .categoria{
+        width: 320px;
+
+        font-size: 18px;
+
+        padding: 10px 20px;
+        margin-top: 25px;
+        margin-bottom: -1px;
+    }
+
+    /* Pregunta */
+    .pregunta{
+        font-size: 11px;
+
+        padding: 10px 10px;
+    }
+
+    /* Aceptacion */
+    .aceptacion{
+        font-size: 11px;
+        width: 30%;
+    }
+
+    .formamodal{
+        font-size: 12px;
+    }
+
+    /* Aceptacion */
+    .seleccion{
+        font-size: 11px;
+        width: 15%;
+    }
+
+    /* Observaciones */
+    .observaciones{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .obs{
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    /* Lista de paginas */
+    .paginas{
+        margin-top: 30px;
+        margin-left: 400px;
+    }
+
+    /* Logo BOD del modal */
+    .BODm{
+        width: 70px;
+        height: 50px;
+        margin-left: 0px;
+    }
+
+    /* Logo UAIR del modal */
+    .UAIRm{
+        width: 70px;
+        height: 50px;
+        margin-right: 0px;
+    }
+
+    /* Titulo del modal */
+    .titulom{
+        font-size: 23px !important;
+
+        margin-top: 10px;
+        padding: 0px 15px;
+    }
+
+    /* Primera parte del modal */
+    .parte1{
+        width: 50%;
+        padding: 5px ;
+    }
+
+    /* Segunda parte del modal */
+    .parte2{
+        vertical-align: top;
+        padding: 5px;
+        width: 50%;
+    }
+
+    /* Boton para guardar la informacion */
+    .guardar{
+        font-size: 15px !important;
+        
+        padding:5px 10px;
+        margin-left: 245px;
+        margin-bottom: 20px;
+    }
+
+    /* Estilos genericos */
+    select{
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+    }
+    textarea{
+        font-size: 11px;
+        width: 175px;
+        height: 80px;
+        margin-bottom: -7px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /* Parte superior del contenedor */
+    .superior{
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        border-radius: 50px 50px 0px 0px;
+    }
+
+    .formamodal{
+        font-size: 10px;
+    }
+
+    /* Titulo de la encuesta */
+    .titulo{
+        font-size: 20px !important;
+
+        margin-top: 10px;
+    }
+    .tit{
+        margin: 0px 80px;
+    }
+
+    /* Logo UAIR */
+    .UAIR{
+        width: 60px;
+        height: 40px;
+
+        margin-right: 15px;
+        margin-top: -2px;
+    }
+
+    /* Logo del BOD */
+    .BOD{
+        width: 60px;
+        height: 40px;
+
+        margin-left: 15px;
+        margin-top: -2px;
+    }
+
+    /* Boton de informacion */
+    .informacion{
+        font-size: 13px;
+
+        padding: 0px 6px 0px 6px;
+
+        margin-top: -1px;
+        margin-left: 330px;
+        border-radius: 0px !important;
+    }
+
+    /* Parte inferior del contenedor */
+    .inferior{
+        width: 100%;
+        height: 100%;
+
+        padding: 15px;
+    }
+
+    /* Descripcion del riesgo */
+    .descripcion{
+        font-size: 15px;
+    }
+
+    /* Lista de preguntas */
+    .tablapreguntas{
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Cateforia */
+    .categoria{
+        width: 320px;
+
+        font-size: 18px;
+
+        padding: 10px 20px;
+        margin-top: 25px;
+        margin-bottom: -1px;
+    }
+
+    /* Pregunta */
+    .pregunta{
+        font-size: 11px;
+
+        padding: 10px 10px;
+    }
+
+    /* Aceptacion */
+    .aceptacion{
+        font-size: 11px;
+        width: 30%;
+    }
+
+    /* Aceptacion */
+    .seleccion{
+        font-size: 11px;
+        width: 15%;
+    }
+
+    /* Observaciones */
+    .observaciones{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .obs{
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    /* Lista de paginas */
+    .paginas{
+        margin-top: 30px;
+        margin-left: 400px;
+    }
+
+    /* Logo BOD del modal */
+    .BODm{
+        width: 70px;
+        height: 50px;
+        margin-left: 0px;
+    }
+
+    /* Logo UAIR del modal */
+    .UAIRm{
+        width: 70px;
+        height: 50px;
+        margin-right: 0px;
+    }
+
+    /* Titulo del modal */
+    .titulom{
+        font-size: 23px !important;
+
+        margin-top: 10px;
+        padding: 0px 15px;
+    }
+
+    /* Primera parte del modal */
+    .parte1{
+        width: 50%;
+        padding: 5px ;
+    }
+
+    /* Segunda parte del modal */
+    .parte2{
+        vertical-align: top;
+        padding: 5px;
+        width: 50%;
+    }
+
+    /* Boton para guardar la informacion */
+    .guardar{
+        font-size: 15px !important;
+        
+        padding:5px 10px;
+        margin-left: 245px;
+        margin-bottom: 20px;
+    }
+
+    /* Estilos genericos */
+    select{
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+    }
+    textarea{
+        font-size: 11px;
+        width: 175px;
+        height: 80px;
+        margin-bottom: -7px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    /* Contenedor de todos los objetos */
+    .contenedor{
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        width: 320px;
+    }   
+
+    /* Titulo de la encuesta */
+    .titulo{
+        font-size: 15px !important;
+    }
+
+    /* Boton de informacion */
+    .informacion{
+        font-size: 10px;
+
+        padding: 0px 6px 0px 5px;
+
+        margin-top: 1px;
+        margin-left: 303px;
+        border-radius: 0px !important;
+    }
+
+    /* Descripcion del riesgo */
+    .descripcion{
+        font-size: 10px;
+    }
+
+    /* Lista de preguntas */
+    .tablapreguntas{
+        width: 290px;
+    }
+
+    /* Cateforia */
+    .categoria{
+        width: 290px;
+
+        font-size: 12px;
+    }
+
+    /* Pregunta */
+    .pregunta{
+        font-size: 10px;
+    }
+
+    /* Aceptacion */
+    .aceptacion{
+        font-size: 10px;
+    }
+
+    /* Aceptacion */
+    .seleccion{
+        font-size: 10px;
+    }
+
+    .obs{
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    /* Logo BOD del modal */
+    .BODm{
+        width: 55px;
+        height: 40px;
+        margin-left: 0px;
+    }
+
+    /* Logo UAIR del modal */
+    .UAIRm{
+        width: 55px;
+        height: 40px;
+        margin-right: 0px;
+    }
+
+    .aceptar{
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    
+
+    /* Titulo del modal */
+    .titulom{
+        font-size: 23px !important;
+
+        margin-top: 10px;
+        padding: 0px 15px;
+    }
+
+    /* Primera parte del modal */
+    .parte1{
+        width: 50%;
+        padding: 5px ;
+    }
+
+    /* Segunda parte del modal */
+    .parte2{
+        vertical-align: top;
+        padding: 5px;
+        width: 50%;
+    }
+
+    /* Boton para guardar la informacion */
+    .guardar{
+        font-size: 15px !important;
+        
+        padding:5px 10px;
+        margin-left: 74%;
+        margin-bottom: 20px;
+    }
+
+    /* Estilos genericos */
+    select{
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+    }
+    textarea{
+        font-size: 11px;
+        width: 185px;
+        height: 80px;
+        margin-bottom: -7px;
+    }
+}

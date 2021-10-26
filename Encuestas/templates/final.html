@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block statico %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/final.css' %}?{% now 'U' %}">
+{% endblock %}
+
+{% block titulo %}
+    <title>Salida</title>
+{% endblock %}
+
+{% block content %}
+    <div class="cuerpo">
+        <div class="superior">
+            <img class="BOD" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}">
+            <img class="UAIR" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+            <h2 class="autoev">Autoevaluacion</h2>
+        </div>
+        <div class="inferior">
+            <h1 class="titulo">Fin del Cuestionario</h1>
+        <h3 class="mensaje">Ha completado el cuestionario y sus respuestas han sido guardadas con éxito</h3>
+        </div>
+    </div>
+{% endblock %}

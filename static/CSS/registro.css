@@ -1,0 +1,154 @@
+/* Titulo principal */
+.registro{
+    font-size: 40px;
+    margin-left: 180px;
+    margin-top: 70px;
+}
+
+/* Campos de texto */
+.solicitudes{
+    font-family: 'Trebuchet MS' !important;
+    font-size: 25px !important;
+
+    width: 400px !important;
+    height: 30px !important;
+    
+    margin-left: 50px !important;
+    margin-top: 20px !important;
+    padding: 25px 15px !important;
+
+    border-radius: 12px !important;
+}
+
+/* Boton para entrar */
+.entrar{
+    font-family: 'Trebuchet MS' !important;
+    font-size: 25px !important;
+
+    width: 120px !important;
+    height: 55px !important;
+    
+    margin-top: 20px;
+    margin-left: 328px;
+    
+    border-radius: 15px !important;
+}
+
+@media screen and (max-width: 1260px) {
+    /* Titulo principal */
+    .registro{
+        font-size: 450%;
+        margin-left: 0px;
+        margin-top: 10%;
+        margin-bottom: 1%;
+    }
+
+    /* Campos de texto */
+    .solicitudes{
+        font-size: 250% !important;
+
+        width: 60% !important;
+        height: 7% !important;
+        padding: 3% 5% !important;
+
+        margin-left: 0% !important;
+        margin-top: 3% !important;
+    }
+
+    /* Boton para entrar */
+    .entrar{
+        font-size: 250% !important;
+
+        width: 25% !important;
+        height: 15% !important;
+        
+        margin-top: 3%;
+        margin-left: 33.5%;
+        margin-bottom: 12%;
+
+        max-width: 30%;
+        
+        border-radius: 15px !important;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    /* Titulo principal */
+    .registro{
+        font-size: 400%;
+    }
+    /* Campos de texto */
+    .solicitudes{
+        font-size: 200% !important;
+    }
+    /* Boton para entrar */
+    .entrar{
+        font-size: 200% !important;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    /* Titulo principal */
+    .registro{
+        font-size: 300%;
+    }
+    /* Campos de texto */
+    .solicitudes{
+        font-size: 150% !important;
+    }
+    /* Boton para entrar */
+    .entrar{
+        font-size: 150% !important;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    /* Titulo principal */
+    .registro{
+        font-size: 230%;
+    }
+
+    /* Campos de texto */
+    .solicitudes{
+        font-size: 120% !important;
+    }
+
+    /* Boton para entrar */
+    .entrar{
+        font-size: 120% !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* Titulo principal */
+    .registro{
+        font-size: 190%;
+    }
+
+    /* Campos de texto */
+    .solicitudes{
+        font-size: 90% !important;
+    }
+
+    /* Boton para entrar */
+    .entrar{
+        font-size: 90% !important;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    /* Titulo principal */
+    .registro{
+        font-size: 150%;
+    }
+
+    /* Campos de texto */
+    .solicitudes{
+        font-size: 70% !important;
+    }
+
+    /* Boton para entrar */
+    .entrar{
+        font-size: 70% !important;
+    }
+}

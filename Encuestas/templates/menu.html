@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block statico %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/menu.css' %}?{% now 'U' %}">
+{% endblock %}
+
+{% block titulo %}
+    <title>Menu de Encuestas</title>
+{% endblock %}
+
+{% block content %}
+    <div class="modal" id="mensaje" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content forma">
+            <div class="modal-body cuerpom">
+                <h2>Bienvenido! {{ nombre }}</h2>
+                <p>La presente encuesta tiene como finalidad evaluar una serie de factores o variables relacionadas con la Gestión y Control de los Riesgos Operativos, Legales y Reputacionales en BOD.
+                    <br><br>
+                    La herramienta se basa en que cada VP ó Gerente evalúe y responda de la forma más objetiva y precisa posible, las distintas proposiciones referida a la gestión de los riesgos operativos.
+                    <br><br>
+                    Con los resultados de la encuesta se pretende afianzar la cultura de gestión de los riesgos operativos e identificar las principales fuentes de riesgos que enfrenta la institución, por lo que agradecemos su atención y respuesta objetiva, de manera de obtener una evaluación actual de los riesgos operativos, legales y reputacionales en BOD. 
+                </p>
+                <img class="BODm" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}">
+                <button type="button" data-dismiss="modal">Aceptar</button>
+                <img class="UAIRm" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="cuerpo">
+        <div class="superior">
+            <img src="{% static 'IMG/LogoBODB.png' %}?{% now 'U' %}">
+            <h4>Autoevaluacion</h4>
+            <input type="button" value="?" data-toggle="modal" data-target="#mensaje">
+        </div>
+        <div class="inferior">
+            <ul>
+                <li>
+                    <a style="text-decoration:none" class="vinculo" href="{% url 'encuestas' encuesta=1 %}">
+                        {% if E1 == False %}
+                        <div>1</div>
+                        {% else %}
+                        <img src="{% static 'IMG/check.png' %}?{% now 'U' %}" class="check">
+                        {% endif %}
+
+                        <button class="opcion">
+                            Riesgo de Personal
+                        </button>
+
+                        <img class="ident" src="{% static 'IMG/RPersonal.png' %}?{% now 'U' %}"> 
+                    </a>
+                </li>
+                <li>
+                    <a style="text-decoration:none" href="{% url 'encuestas' encuesta=2 %}">
+                        {% if E2 == False %}
+                        <div>2</div>
+                        {% else %}
+                        <img src="{% static 'IMG/check.png' %}?{% now 'U' %}" class="check">
+                        {% endif %}
+        
+                        <button class="opcion">
+                            Riesgo de Procesos
+                        </button>
+                        <img class="ident" src="{% static 'IMG/RProcesos.png' %}?{% now 'U' %}">
+                    </a>
+                </li>
+                <li>
+                    <a style="text-decoration:none" href="{% url 'encuestas' encuesta=3 %}">
+                        {% if E3 == False %}
+                        <div>3</div>
+                        {% else %}
+                        <img src="{% static 'IMG/check.png' %}?{% now 'U' %}" class="check">
+                        {% endif %}
+        
+                        <button class="opcion">
+                            Riesgo de Sistemas
+                        </button>
+                        <img class="ident" src="{% static 'IMG/RSistemas.png' %}?{% now 'U' %}">
+                    </a>
+                </li>
+                <li>   
+                    <a style="text-decoration:none" href="{% url 'encuestas' encuesta=4 %}">
+                        {% if E4 == False %}
+                        <div>4</div>
+                        {% else %}
+                        <img src="{% static 'IMG/check.png' %}?{% now 'U' %}" class="check">
+                        {% endif %}
+        
+                        <button class="opcion">
+                            Riesgo de Factores Externos
+                        </button>
+                        <img class="ident" src="{% static 'IMG/RExternos.png' %}?{% now 'U' %}">
+                    </a>
+                </li>
+                <li>
+                    <a style="text-decoration:none" href="{% url 'encuestas' encuesta=5 %}">
+                        {% if E5 == False %}
+                        <div>5  </div>
+                        {% else %}
+                        <img src="{% static 'IMG/check.png' %}?{% now 'U' %}" class="check">
+                        {% endif %}
+                        
+                        <button class="opcion">
+                            Riesgo Reputacional y Legal
+                        </button>
+                        <img class="ident" src="{% static 'IMG/RLegal.png' %}?{% now 'U' %}">
+                    </a>
+                </li>
+            </ul>
+            
+            <form method="POST"> {% csrf_token %}
+                <input {% if guardar == False %} disabled {% endif %} type="submit" value="Guardar">
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {% if entrada == True %}
+        <script src="{% static 'JS/inicio.js' %}"></script>
+    {% endif %}
+{% endblock %}

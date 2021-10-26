@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block statico %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/encuesta.css' %}?{% now 'U' %}">
+{% endblock %}
+
+{% block titulo %}
+    <title>{{ encuesta.nombre }}</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="modal" id="mensaje" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body cuerpom">
+                <p><h2 class="menerror">ERROR</h2></p>
+                <p>{{ mensaje }}</p>
+                <img class="BODm" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}">
+                <img class="UAIRm" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+                <button type="button" class="btn btn-success aceptar" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de las encuestas -->
+    <div class="contenedor">
+        <div class="superior">
+            <img class="BOD" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}">
+            <img class="UAIR" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+            <div class="tit"><h1 class="titulo">{{ encuesta.nombre }}</h1></div>
+            <input type="button" class="btn btn-success informacion" value="?" data-toggle="modal" data-target="#info">
+        </div>
+        <div class="inferior">
+            <p class="descripcion">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ encuesta.descripcion }}</p> 
+            <form method="POST"> {% csrf_token %}
+                {% for categoria in categorias %}
+                <div class="categoria">
+                    {{ categoria.nombre }}
+                </div>
+                    <table class="tablapreguntas">
+                        {% for pregunta in categoria.preguntas %}
+                            <tr>
+                                <td rowspan="2" class="pregunta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{pregunta.descripcion}}</td>
+                                <td class="aceptacion">% de Aceptacion</td>
+                            </tr>
+                            <tr>
+                                <td class="seleccion">
+                                    <select required name="porcentaje{{pregunta.id}}">
+                                        <option value="Seleccionar">Seleccionar</option>
+                                        <option value="81% - 100%" {{ pregunta.p100 }}>81% - 100%</option>
+                                        <option value="61% - 80%" {{ pregunta.p80 }}>61% - 80%</option>
+                                        <option value="41% - 60%" {{ pregunta.p60 }}>41% - 60%</option>
+                                        <option value="21% - 40%" {{ pregunta.p40 }}>21% - 40%</option>
+                                        <option value="0% - 20%" {{ pregunta.p20 }}>0% - 20%</option>
+                                        <option value="N/C" {{ pregunta.nc }}>N/C</option>
+                                        <option value="N/A" {{ pregunta.na }}>N/A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endfor %}
+
+                <table class="observaciones">
+                    <tr>
+                        <td class="obs">Observaciones</td>
+                        <td class="detalles">
+                            <textarea placeholder="Ingrese su observación" name="observaciones" maxlength="400">{{ obs }}</textarea>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="btn btn-success guardar" value="Guardar">
+            </form>
+            
+        </div>
+    </div>
+
+    <div class="modal principal" id="info" aria-labelledby="info">
+        <div class="modal-dialog" role="document" style="text-align: center;">
+            <div class="modal-content formamodal">
+                <div class="modal-header">
+                    <img class="BODm" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}">
+                    <h5 class="modal-title titulom">Instrucciones</h5>
+                    <img class="UAIRm" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+                </div>
+                <div class="modal-body">
+                    <div class="parte1">
+                        <p> <b>1.-</b> La encuesta esta dividida en cinco tópicos principales derivados de los Factores o Fuentes de Riesgo Operacional establecidas en BOD Banco Occidental de Descuento. Estos son: Riesgos de Personal, de Procesos, de Sistemas, de Factores Externos y, Riesgo Legal y Reputacional. Es importante que todos los tópicos sean respondidos para culminar exitosamente la actividad. </p>
+                        <p> <b>2.-</b> Se requiere que la persona seleccionada para responder la encuesta, sea la que la responda íntegramente y no delegue la evaluación, ya que las afirmaciones están diseñadas específicamente para el nivel Ejecutivo y Gerencial de la Institución. </p>
+                        <p> <b>3.-</b> Se estima que la encuesta pueda ser terminada en 45 Minutos aproximadamente; sin embargo, en caso de ser requerido la aplicación permite la respuesta por partes, al salir una vez contestados TODOS los ítems de un tópico o factor de riesgo. Al salir de las pantallas las respuestas se graban automáticamente. </p> 
+                        <p> <b>4.-</b> Cada tópico contiene una serie de afirmaciones que deben ser revisadas con detenimiento y respondidas con objetividad, de acuerdo al grado de aceptación de la afirmación, desde el mayor grado de aceptación (81% a 100%) que implica el menor nivel de riesgo; hasta el nivel de menor aceptación (0% a 20%) que implica el mayor nivel de riesgo. </p>
+                    </div>
+                    <div class="parte2">
+                        <p> <b>5.-</b> En el caso de que la afirmación no aplique directamente al área que representa el encuestado, podrá contestar “No Aplica (NA)” y en el caso que no tenga el conocimiento suficiente de la afirmación en cuestión, puede responder como “No Contesta (NC)”. </p>
+                        <p> <b>6.-</b> Existen una serie de preguntas que se refieren a la ocurrencia de eventos específicos, es importante que en el espacio  de “Observaciones” el encuestado puede especificar los casos que estime resaltar o, también puede incluir procesos críticos o algún elemento importante para el control de los riesgos mencionados. </p>
+                        <p> <b>7.-</b> Cualquier duda o aclaratoria referidas a las afirmaciones consultadas en los tópicos, por favor comunicarse con la UAIR a la Atención del Sr. José G. Sánchez (2681) ó Yldemaro Guzmán (3003). </p> 
+                        <p> <b>8.-</b> Cualquier falla de la funcionalidad de la herramienta desarrollada, por favor comunicarse con la UAIR a la Atención del Sr. José G. Sánchez (2681) ó Roberto González (2682). </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {% if errFalta == True or errObs == True%}
+        <script src="{% static 'JS/inicio.js' %}"></script>
+    {% endif %}
+{% endblock %}

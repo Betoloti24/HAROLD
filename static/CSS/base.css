@@ -1,0 +1,16 @@
+/* Cuerpo de la Pantalla */
+body{
+    background-image: url("../IMG/Fondo.png") !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Trebuchet MS';
+
+    min-width: 250px;
+}
+
+@media screen and (max-width: 1260px){
+    body{
+        background-image: url("../IMG/FondoRes.png") !important;
+    }
+}

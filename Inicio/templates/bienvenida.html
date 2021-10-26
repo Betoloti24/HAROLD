@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block statico %}
+  <link rel="stylesheet" type="text/css" href="{% static 'CSS/bienvenida.css' %}?{% now 'U' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'CSS/inicio.css' %}?{% now 'U' %}">
+{% endblock %}
+
+{% block content %}
+
+  {% if smscookies == True %}
+    <div class="modal" id="mensaje" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content contenido">
+          <div class="modal-body smscuerpo">
+            <p><h2 class="aviso">Aviso de Cuestionario en Curso</h2></p>
+            <p>{{mensaje}}</p>
+
+            <img class="BODm" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}">
+            <img class="UAIRm" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+            
+            <form method="POST"> {% csrf_token %}
+              <input type="hidden" name="opcion" value="si">
+              <input type="submit" class="btn btn-success si" value="Si">
+            </form>
+            <form method="POST"> {% csrf_token %}
+              <input type="hidden" name="opcion" value="no">
+              <input type="submit" class="btn btn-secondary no" value="No">
+            </form>
+          </div>
+      </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if Error == True %}
+    <div class="modal" id="mensaje" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-body cuerpom">
+          <p><h2 class="menerror">ERROR</h2></p>
+          <p>{{ mensaje }}</p>
+          <img class="BODm" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}">
+          <img class="UAIRm" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+          <button type="button" class="btn btn-success aceptar" data-dismiss="modal">Aceptar</button>
+      </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="main">
+    <div class="presentacion">
+        <img class="UAIR" src="{% static 'IMG/LogoUAIR.png' %}?{% now 'U' %}">
+        <img class="BOD" src="{% static 'IMG/LogoBOD.png' %}?{% now 'U' %}" alt="">
+        <h1 class="titulo">Autoevaluación</h1>
+    </div>
+    <div class="bienvenida">
+      <h1 class="entrada">Bienvenido!</h1>
+      <form method="POST"> {% csrf_token %}
+          <input type="hidden" name="opcion" value="ingresar">
+          <input class="cedula" placeholder="Ingrese su Cédula" type="text" name="cedula" autocomplete="off" required><br>
+          <input type="submit" class="btn btn-success entrar" value="Entrar">
+      </form> 
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  {% if smscookies == True or Error == True %}
+    <script src="{% static 'JS/inicio.js' %}"></script>
+  {% endif %}
+
+{% endblock %}
